@@ -1,0 +1,6 @@
+SecurityEvent
+| where EventID == 4625
+| where AccountType == "User"
+| summarize FailedCount = count() by TargetAccount, Computer, bin(TimeGenerated, 10m)
+| where FailedCount >= 3
+| sort by FailedCount desc

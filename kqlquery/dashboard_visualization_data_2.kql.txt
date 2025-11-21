@@ -1,0 +1,10 @@
+range id from 1 to 155 step 1
+| extend Department = case(
+    rand() < 0.40, "HR",      
+    rand() < 0.65, "Księgowość", 
+    rand() < 0.80, "E-Commerce",     
+    rand() < 0.90, "IT",   
+    "Zarząd"                              
+)
+| summarize IncidentCount = count() by Department
+| render piechart with (title="Rozkład Incydentów wg Działów (Potrzeba Szkoleń)")

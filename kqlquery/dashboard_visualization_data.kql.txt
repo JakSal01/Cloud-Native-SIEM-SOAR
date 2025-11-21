@@ -1,0 +1,13 @@
+range TimeGenerated from ago(14d) to now() step 4h
+| extend AttackType = case(
+    rand() < 0.30, "Brute Force ",      
+    rand() < 0.55, "Phishing ",          
+    rand() < 0.75, "Malware ",       
+    rand() < 0.90, "Privilege Escalation ", 
+    "Data Exfiltration "                     
+)
+
+| extend Count = toint(rand() * 100)
+| summarize TotalEvents = sum(Count) by AttackType
+| sort by TotalEvents desc
+| render barchart with (title="Top 5 Zagrożeń (Ostatnie 14 Dni)", ytitle="Liczba Zdarzeń")le="Liczba Incydentów")

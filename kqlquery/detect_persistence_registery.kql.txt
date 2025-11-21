@@ -1,0 +1,6 @@
+SecurityEvent
+| where EventID == 4688
+| where Process has "reg.exe"
+| where CommandLine has "add"
+| where CommandLine has "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+| project TimeGenerated, Computer, Account, CommandLine

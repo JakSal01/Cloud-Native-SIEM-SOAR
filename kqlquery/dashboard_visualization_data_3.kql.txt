@@ -1,0 +1,10 @@
+range TimeGenerated from ago(30d) to now() step 1h
+| extend Godzina = hourofday(TimeGenerated)
+| extend PoziomZagrozenia = case(
+    Godzina < 5, rand() * 50 + 60,  
+    Godzina > 20, rand() * 30 + 40, 
+    rand() * 15                     
+)
+| summarize SredniaAktywnosc = toint(avg(PoziomZagrozenia)) by Godzina
+| order by Godzina asc
+| render columnchart
