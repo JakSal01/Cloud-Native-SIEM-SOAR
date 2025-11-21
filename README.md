@@ -1,4 +1,4 @@
-# Azure Sentinel SOC Home Lab - Dokumentacja Projektu
+# Cloud-Native-SIEM-SOAR 
 
 Ten projekt dokumentuje budowę domowego laboratorium SOC (Security Operations Center) opartego na chmurze Microsoft Azure (Sentinel). Celem było zasymulowanie cyberataków, ich detekcja za pomocą reguł analitycznych (KQL) oraz automatyzacja reakcji (SOAR).
 
