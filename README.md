@@ -45,7 +45,7 @@ Wykorzystanie języka KQL (Kusto Query Language) do tworzenia reguł analityczny
     ![Uwierzytelnianie](Screenshots/authentication.png)
     *Analiza Event ID 4624/4625 oraz prób przełamania haseł.*
 * **Threat Hunting:**
-    ![Threat Hunting](Screenshots/threat_hunting_powershell_detection.png) 
+    ![Threat Hunting](Screenshots/threathunting.png) 
 
 ---
 
